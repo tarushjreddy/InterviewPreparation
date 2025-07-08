@@ -19,7 +19,5 @@ public class BubbleSort {
         for(int num : nums){
             System.out.print(num+" ");
         }
-        
-        
     }
 }
