@@ -32,3 +32,13 @@ procedure BinarySearch(A: List of all the elements, target: The element which is
     return -1 
     
 end procedure
+
+procedure bubbleSort(A: List of all the elements)
+    for i=0 i<nums.length i++
+        for j=0 j<nums.lenth-1-i j++
+            if nums[j] > nums[j+1]
+                temp = nums[j]
+                nums[j] = nums[j+1]
+                nums[j+1] = temp
+    return nums 
+end procedure

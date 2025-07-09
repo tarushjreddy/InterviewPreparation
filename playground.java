@@ -7,12 +7,15 @@ public class playground {
         int nums[] = {3, 4, 5, 6, 7, 8, 9, 10};
         int target = 10;
         Scanner typemethod = new Scanner(System.in);
+        System.out.println("Please enter you want to perform Sorting or Searching");
         String inputmethod = typemethod.nextLine();
+        typemethod.close();
  
        if("Searching".equals(inputmethod)){
         Scanner typeInput = new Scanner(System.in);
         String type = typeInput.nextLine();
-         int res = findSearching(nums, target, type);
+        typeInput.close();
+        int res = findSearching(nums, target, type);
         if (res == -1) {
             System.out.println("Element is not present");
         } else {
@@ -30,6 +33,7 @@ public class playground {
        }
     }
     public static int[] findSorting(int[] nums){
+
         for(int i=0; i < nums.length; i++){
             System.out.println(nums[i]);
             for(int j=0; j<nums.length-i-1; j++){
