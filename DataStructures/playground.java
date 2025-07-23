@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class playground {
 
     public static void main(String[] args) {
-        int nums[] = {3, 4, 5, 6, 7, 8, 9, 10};
+        int nums[] = { 3, 4, 5, 6, 7, 8, 9, 10 };
         int target = 10;
         Scanner typemethod = new Scanner(System.in);
         System.out.println("Please enter you want to perform Sorting or Searching");
@@ -17,15 +17,16 @@ public class playground {
             if (res == -1) {
                 System.out.println("Element is not present");
             } else {
-                System.out.println("Element is present in this position of the nums " + res + " where the value for nums is " + nums[res]);
+                System.out.println("Element is present in this position of the nums " + res
+                        + " where the value for nums is " + nums[res]);
             }
         } else if ("Sorting".equals(inputmethod)) {
             System.out.println("Sorting Program Triggered");
             System.out.println("Select the type of Sorting");
-          
+
             String typeofSort = typemethod.nextLine();
 
-            int unsorted[] = {3, 4, 5, 6, 7, 8, 9, 10};
+            int unsorted[] = { 3, 4, 5, 6, 7, 8, 9, 10 };
             int res[] = findSorting(unsorted, typeofSort);
 
             for (int num : res) {
@@ -37,10 +38,10 @@ public class playground {
     public static int[] findSorting(int[] nums, String type) {
         if ("Selection".equals(type)) {
             int minIndex = 0;
-            for(int i =0; i<nums.length; i++){
+            for (int i = 0; i < nums.length; i++) {
                 minIndex = i;
-                for(int j=i+1; j<nums.length; j++){
-                    if(nums[minIndex]>nums[j]){
+                for (int j = i + 1; j < nums.length; j++) {
+                    if (nums[minIndex] > nums[j]) {
                         minIndex = j;
                     }
                 }
@@ -49,7 +50,7 @@ public class playground {
                 nums[i] = temp;
             }
             System.out.println("Sorted array using Selection Sort will be as follows");
-            for(int num : nums){
+            for (int num : nums) {
                 System.out.println(num);
             }
 
@@ -63,6 +64,19 @@ public class playground {
                         nums[j + 1] = temp;
                     }
                 }
+            }
+        } else if ("Insertion".equals(type)) {
+            for(int i=0; i<nums.length; i++){
+                int key = nums[i];
+                int j = i-1;
+                while(j>=0 && nums[j]>key){
+                    nums[j+1] = nums[j];
+                    j--;
+                } 
+                nums[j+1] = key;
+            }
+            for(int num : nums){
+                System.out.println(num + ' ');
             }
         }
         return nums;

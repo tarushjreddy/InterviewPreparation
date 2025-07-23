@@ -1,6 +1,5 @@
 
 public class insertionSort {
-
     public static void main(String[] args) {
         int nums[] = {9, 6, 7, 8, 9};
         int[] result = InsertionSort(nums);
